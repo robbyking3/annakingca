@@ -33,9 +33,9 @@ const Content = styled('main')`
     z-index: 10;
     display: grid;
     padding: 40px 0;
-    grid-gap: 16px;
+    grid-gap: 8px;
     grid-template-rows: auto;
-    grid-template-columns: 16px 1fr 1fr 16px;
+    grid-template-columns: 8px 1fr 1fr 8px;
 
     grid-template-areas:
         '. title title .'
@@ -55,16 +55,22 @@ const Title = styled('h1')`
     color: rgba(255, 255, 255, 0.8);
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
     font-family: 'CustomBree', sans-serif;
-    font-size: 62px;
-    text-align: left;
+    font-size: 44px;
+    text-align: center;
+    margin-top: 40px;
     margin-bottom: 0;
     grid-area: title;
+    @media screen and (min-width: 840px) {
+        text-align: left;
+        margin-top: 0;
+        font-size: 62px;
+    }
 `
 
 const Social = styled('div')`
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
     grid-area: social;
 `
 const IconImg = styled('img')`
@@ -84,9 +90,20 @@ const Link = styled('a')`
     justify-content: center;
     box-shadow: 0 0 0 #fff;
     background-color: rgba(255, 255, 255, 0.7);
-    opacity: 0.4;
+    opacity: 0.5;
     &:hover {
-        opacity: 0.8;
+        opacity: 0.9;
+    }
+`
+
+const Email = styled('a')`
+    color: rgba(63, 45, 38, 1);
+    margin-left: 8px;
+    text-decoration: none;
+    border-bottom: 1px solid;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2);
+    &:hover {
+        border-bottom: 2px solid;
     }
 `
 
@@ -103,6 +120,11 @@ const ContentBlock = styled('div')`
     }
     & p:last-child {
         margin-bottom: 0;
+    }
+    margin-top: 100px;
+
+    @media screen and (min-width: 840px) {
+        margin-top: 0;
     }
 `
 
@@ -169,6 +191,9 @@ const IndexPage = () => {
                     <Link href="https://medium.com/@annakyyj" target="_blank">
                         <IconImg src={IconMd} />
                     </Link>
+                    <Email href="mailto:hello@annaking.ca">
+                        hello@annaking.ca
+                    </Email>
                 </Social>
             </Content>
         </React.Fragment>
