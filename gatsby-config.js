@@ -1,4 +1,5 @@
 module.exports = {
+    pathPrefix: '/annakingca',
     siteMetadata: {
         title: `Anna King`,
         description: `Anna King is a digital marketing specialist for non-profits, and ran in the Victoria 2018 election for city council.`,
