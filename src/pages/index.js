@@ -2,6 +2,12 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Global, css } from '@emotion/core'
 
+import Bree2 from '../fonts/Bree-Bold.woff2'
+import Bree1 from '../fonts/Bree-Bold.woff'
+
+import Futura2 from '../fonts/Futura-CondensedMedium.woff2'
+import Futura1 from '../fonts/Futura-CondensedMedium.woff'
+
 import Image from '../components/image'
 import SEO from '../components/seo'
 
@@ -37,18 +43,18 @@ const Content = styled('main')`
         '. social social .';
 
     @media screen and (min-width: 840px) {
-        grid-template-columns: 3% 1fr 1fr 3%;
+        grid-template-columns: 3% 4fr 3fr 4fr 3%;
         grid-template-areas:
-            '. . title .'
-            '. . content .'
-            '. . social .';
+            '. . title title .'
+            '. . content content .'
+            '. . social social .';
     }
 `
 
 const Title = styled('h1')`
     color: rgba(255, 255, 255, 0.8);
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
-    font-family: 'Bree', sans-serif;
+    font-family: 'CustomBree', sans-serif;
     font-size: 62px;
     text-align: left;
     margin-bottom: 0;
@@ -85,11 +91,12 @@ const Link = styled('a')`
 `
 
 const ContentBlock = styled('div')`
-    padding: 16px;
+    padding: 24px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 4px;
+    color: #484848;
     grid-area: content;
-    font-family: 'Futura', sans-serif;
+    font-family: 'CustomFutura', sans-serif;
     font-size: 22px;
     & h3 {
         margin-top: 0;
@@ -105,19 +112,17 @@ const IndexPage = () => {
             <Global
                 styles={css`
                     @font-face {
-                        font-family: 'Bree';
-                        src: url('../fonts/Bree-Bold.woff2') format('woff2'),
-                            url('../fonts/Bree-Bold.woff') format('woff');
+                        font-family: 'CustomBree';
+                        src: url(${Bree2}) format('woff2'),
+                            url(${Bree1}) format('woff');
                         font-weight: normal;
                         font-style: normal;
                     }
 
                     @font-face {
-                        font-family: 'Futura';
-                        src: url('../fonts/Futura-CondensedMedium.woff2')
-                                format('woff2'),
-                            url('../fonts/Futura-CondensedMedium.woff')
-                                format('woff');
+                        font-family: 'CustomFutura';
+                        src: url(${Futura2}) format('woff2'),
+                            url(${Futura1}) format('woff');
                         font-weight: normal;
                         font-style: normal;
                     }
@@ -130,7 +135,7 @@ const IndexPage = () => {
             <Content>
                 <Title>Anna King</Title>
                 <ContentBlock>
-                    <h3>Digital Marketing Strategist</h3>
+                    <h3>Mother. Marketing Executive. Nonprofit Consultant.</h3>
                     <p>
                         Former Chief Marketing Officer serving charities across
                         North America.
