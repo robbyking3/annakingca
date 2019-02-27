@@ -6,7 +6,8 @@ import Image from '../components/image'
 import SEO from '../components/seo'
 
 import IconLn from '../images/icon-ln.svg'
-import IconIg from '../images/icon-ig.svg'
+import IconTw from '../images/icon-tw.svg'
+import IconMd from '../images/icon-md.svg'
 
 const ImageWrapper = styled('div')`
     position: fixed;
@@ -35,7 +36,7 @@ const Content = styled('main')`
         '. content content .'
         '. social social .';
 
-    @media screen and (min-width: 760px) {
+    @media screen and (min-width: 840px) {
         grid-template-columns: 3% 1fr 1fr 3%;
         grid-template-areas:
             '. . title .'
@@ -90,6 +91,12 @@ const ContentBlock = styled('div')`
     grid-area: content;
     font-family: 'Futura', sans-serif;
     font-size: 22px;
+    & h3 {
+        margin-top: 0;
+    }
+    & p:last-child {
+        margin-bottom: 0;
+    }
 `
 
 const IndexPage = () => {
@@ -125,16 +132,23 @@ const IndexPage = () => {
                 <ContentBlock>
                     <h3>Digital Marketing Strategist</h3>
                     <p>
-                        Passionate and innovative marketing communications
-                        professional with a specialty in online fundraising,
-                        direct email marketing, and web advertising. Over 15
-                        years of experience in the non-profit industry. Enjoys
-                        collaborative projects with like-minded individuals and
-                        organizations.
+                        Former Chief Marketing Officer serving charities across
+                        North America.
+                    </p>
+                    <p>2018 City of Victoria municipal election candidate.</p>
+                    <p>
+                        Currently embracing a season of radical rest as
+                        housewife and mother.
+                    </p>
+                    <p>Passionate about people, adventure, and simplicity.</p>
+                    <p>
+                        Enjoys collaborative projects with like-minded
+                        individuals and organizations.
                     </p>
                     <p>
-                        Lives in Victoria, BC. Wife to Rob King and mother to
-                        daughter, Charlotte and cat, Otto.
+                        Writing and serving you from the unceded territory of
+                        the Lekwungen speaking peoples, the Songhees and
+                        Esquimalt First Nations where I live, work, and play.
                     </p>
                 </ContentBlock>
                 <Social>
@@ -145,7 +159,10 @@ const IndexPage = () => {
                         <IconImg src={IconLn} />
                     </Link>
                     <Link href="https://twitter.com/annakyyj/" target="_blank">
-                        <IconImg src={IconIg} />
+                        <IconImg src={IconTw} />
+                    </Link>
+                    <Link href="https://medium.com/@annakyyj" target="_blank">
+                        <IconImg src={IconMd} />
                     </Link>
                 </Social>
             </Content>
